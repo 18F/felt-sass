@@ -1,0 +1,23 @@
+{
+  "name": "felt-sass",
+  "version": "0.1.0",
+  "description": "Sass plugin for Felt",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "keywords": [
+    "felt",
+    "sass"
+  ],
+  "author": "Shawn Allen <shawn.allen@gsa.gov>",
+  "license": "CC0-1.0",
+  "dependencies": {
+    "co": "^4.6.0",
+    "fs-promise": "^0.5.0",
+    "node-sass": "^3.8.0"
+  },
+  "devDependencies": {
+    "ava": "^0.16.0"
+  }
+}
