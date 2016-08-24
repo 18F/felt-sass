@@ -16,9 +16,9 @@ module.exports = function(config) {
   try {
     // console.warn('Loading config from:', configFile);
     baseConfig = require(path.join(root, configFile));
-    console.warn('Loaded Sass config from:', configFile);
+    // console.warn('Loaded Sass config from:', configFile);
   } catch (e) {
-    console.warn('No config file found for felt-sass in:', configFile);
+    // console.warn('No config file found for felt-sass in:', configFile);
   }
   if (baseConfig) {
     config = Object.assign(baseConfig, config);
