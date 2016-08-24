@@ -8,15 +8,20 @@ const sass = require('node-sass');
 const defaultConfig = 'sass.config.js';
 
 module.exports = function(config) {
-  if (typeof config === 'string' || !config) {
-    try {
-      const root = process.cwd();
-      const configFile = path.join(root, config || defaultConfig);
-      config = require(configFile);
-    } catch (e) {
-      console.warn('No config file found for felt-sass!');
-      config = {};
-    }
+  const root = process.cwd();
+  var baseConfig;
+  const configFile = (typeof config === 'string')
+    ? config
+    : defaultConfig;
+  try {
+    // console.warn('Loading config from:', configFile);
+    baseConfig = require(path.join(root, configFile));
+    console.warn('Loaded Sass config from:', configFile);
+  } catch (e) {
+    console.warn('No config file found for felt-sass in:', configFile);
+  }
+  if (baseConfig) {
+    config = Object.assign(baseConfig, config);
   }
   return co.wrap(function* (from, to) {
     const options = Object.assign({}, config, {file: from});
