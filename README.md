@@ -6,7 +6,6 @@ Usage, in `felt.config.js`:
 
 ```js
 const sass = require('felt-sass');
-const post = require
 
 module.exports = {
   handlers: {
